@@ -1,6 +1,6 @@
 module.exports = {
   "username": "root",
-  "password": "",
+  "password": "gi",
   "database": "sequelize_neurotek",
   "host": "localhost",
   "dialect": "mysql",
