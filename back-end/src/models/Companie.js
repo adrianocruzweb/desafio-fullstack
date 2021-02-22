@@ -13,6 +13,10 @@ class Companie extends Model {
       }
     )
   }
+
+  static associate(models) {
+    this.hasMany(models.User, { foreignKey: 'companieId', as: 'users'})
+  }
 }
 
 module.exports = Companie

@@ -11,13 +11,15 @@ routes.get('/', (req, res) => {
   return res.json({ hello: 'world' })
 })
 
-routes.get('/companies', UserController.index)
-
-routes.post('/companies/:companieId/users', UserController.store)
-
+// list all companies
+routes.get('/companies', CompanieController.index)
+// create one companie
 routes.post('/companies', CompanieController.store)
-
-
-
+// find all users
+routes.get('/users', UserController.indexAll)
+// get all users to index
+routes.get('/companies/:companieId/users', UserController.index)
+// create one user
+routes.post('/companies/:companieId/users', UserController.store)
 
 module.exports = routes

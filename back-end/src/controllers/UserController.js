@@ -2,10 +2,20 @@ const User = require('../models/User')
 const Companie = require('../models/Companie')
 
 module.exports = {
-  async index(req, res) {
+  async indexAll(req, res) {
     const users = await User.findAll()
 
     return res.json(users)
+  },
+
+  async index(req, res) {
+    const { companieId } = req.params
+
+    const companie = await Companie.findByPk(companieId, {
+      include: { association: 'users'}
+    })
+
+    return res.json(companie)
   },
 
   async store(req, res) {
