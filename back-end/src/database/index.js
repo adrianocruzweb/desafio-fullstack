@@ -15,4 +15,6 @@ Client.init(connection)
 Product.init(connection)
 Order.init(connection)
 
+User.associate(connection.models)
+
 module.exports = connection

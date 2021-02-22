@@ -1,3 +1,5 @@
+const sequelize = require("sequelize");
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable(
@@ -30,10 +32,10 @@ module.exports = {
           allowNull: false,
         },
       }
-    );
+    )
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('conpanies');
+    await queryInterface.dropTable('companies')
   }
-};
+}

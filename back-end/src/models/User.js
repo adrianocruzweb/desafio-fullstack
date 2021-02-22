@@ -6,11 +6,16 @@ class User extends Model {
       {
         name: DataTypes.STRING,
         email: DataTypes.STRING,
+        type: DataTypes.STRING,
       },
       {
         sequelize
       }
     )
+  }
+
+  static associate(models) {
+    this.belongsTo(models.User, { foreignKey: 'companieId', as: 'companie'})
   }
 }
 

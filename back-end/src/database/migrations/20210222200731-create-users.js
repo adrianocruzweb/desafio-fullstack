@@ -11,7 +11,7 @@ module.exports = {
           autoIncrement: true,
           allowNull: false,
         },
-        companie_id: {
+        companieId: {
           type: Sequelize.INTEGER,
           allowNull: false,
           references: { model: 'companies', key: 'id'},
