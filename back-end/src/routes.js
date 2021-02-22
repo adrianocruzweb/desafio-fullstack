@@ -7,10 +7,6 @@ const OrderController = require('./controllers/OrderController')
 
 const routes = express.Router()
 
-routes.get('/', (req, res) => {
-  return res.json({ hello: 'world' })
-})
-
 // list all companies
 routes.get('/companies', CompanieController.index)
 // create one companie
@@ -21,5 +17,13 @@ routes.get('/users', UserController.indexAll)
 routes.get('/companies/:companieId/users', UserController.index)
 // create one user
 routes.post('/companies/:companieId/users', UserController.store)
+// find all clients
+routes.get('/clients', ClientController.index)
+// create client
+routes.post('/clients', ClientController.store)
+// update client
+routes.patch('/clients/:clientId', ClientController.update)
+// delete client
+routes.delete('/clients/:clientId', ClientController.delete)
 
 module.exports = routes
